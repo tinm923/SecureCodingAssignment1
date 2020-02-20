@@ -1,10 +1,12 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <time.h>
 
 #define MAXCHAR 512
 #define MAXLINES 10
 void displayContents();
+void displayRandom();
 int main() {
     FILE *testFile;
     testFile = fopen("a.txt", "r");
@@ -19,7 +21,8 @@ int main() {
 		fgets(buff[i], MAXCHAR, testFile);
 	}
 
-    displayContents(buff);
+    //displayContents(buff);
+    displayRandom(buff);
     free(buff);
     fclose(testFile);
     return 0;
@@ -31,4 +34,11 @@ void displayContents(char **input){
 		printf("O/P: %s\n", input[i]);
 		free(input[i]);
 	}
+}
+
+void displayRandom(char **input){
+    time_t t;
+    srand((unsigned) time(&t));
+    int num = rand() % 10;
+    printf("O/P: %s\n", input[num]);
 }
