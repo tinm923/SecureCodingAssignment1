@@ -41,4 +41,8 @@ void displayRandom(char **input){
     srand((unsigned) time(&t));
     int num = rand() % 10;
     printf("O/P: %s\n", input[num]);
+    for (int i = 0; i < MAXLINES; i++)
+	{
+		free(input[i]);
+	}
 }
