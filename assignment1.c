@@ -27,7 +27,7 @@ int main() {
     fclose(testFile);
     return 0;
 }
-
+//not used in final product
 void displayContents(char **input){
     for (int i = 0; i < MAXLINES; i++)
 	{
@@ -35,7 +35,7 @@ void displayContents(char **input){
 		free(input[i]);
 	}
 }
-
+//final product
 void displayRandom(char **input){
     time_t t;
     srand((unsigned) time(&t));
